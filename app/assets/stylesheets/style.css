@@ -35,3 +35,7 @@
     color: #faf8f6; 
     border: none; 
 }
+
+.custom-link {
+    color: #ff9900; /* Cambia el color del enlace */
+}

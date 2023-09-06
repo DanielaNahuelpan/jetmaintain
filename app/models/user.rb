@@ -7,5 +7,8 @@ class User < ApplicationRecord
         has_many :maintenances
         has_many :motors, through: :maintenances
 
+        validates :email, presence: true, uniqueness: true
+        validates :password, presence: true
+
         enum role: { operador: 'operador', administrador: 'administrador' }
 end
