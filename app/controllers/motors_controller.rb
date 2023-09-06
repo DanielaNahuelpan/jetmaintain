@@ -4,6 +4,7 @@ class MotorsController < ApplicationController
   # GET /motors or /motors.json
   def index
     @motors = Motor.all
+    @pagy, @motors = pagy(Motor.all)
   end
 
   # GET /motors/1 or /motors/1.json

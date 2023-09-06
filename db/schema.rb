@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_06_051523) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_06_071702) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,12 +54,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_051523) do
     t.bigint "user_id", null: false
     t.bigint "motor_id", null: false
     t.bigint "city_id", null: false
-    t.bigint "materials_id", null: false
+    t.bigint "material_id", null: false
     t.bigint "type_of_maintenance_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_maintenances_on_city_id"
-    t.index ["materials_id"], name: "index_maintenances_on_materials_id"
+    t.index ["material_id"], name: "index_maintenances_on_material_id"
     t.index ["motor_id"], name: "index_maintenances_on_motor_id"
     t.index ["type_of_maintenance_id"], name: "index_maintenances_on_type_of_maintenance_id"
     t.index ["user_id"], name: "index_maintenances_on_user_id"
@@ -109,7 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_051523) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "maintenances", "cities"
-  add_foreign_key "maintenances", "materials", column: "materials_id"
+  add_foreign_key "maintenances", "materials"
   add_foreign_key "maintenances", "motors"
   add_foreign_key "maintenances", "type_of_maintenances"
   add_foreign_key "maintenances", "users"

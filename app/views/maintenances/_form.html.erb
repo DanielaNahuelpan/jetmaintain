@@ -37,8 +37,8 @@
   </div>
 
   <div>
-    <%= form.label :materials_id, style: "display: block" %>
-    <%= form.select :materials_id, Material.all.collect {|c| [c.name, c.id]} %>
+    <%= form.label :material_id, style: "display: block" %>
+    <%= form.select :material_id, Material.all.collect {|c| [c.name, c.id]} %>
   </div>
 
   <div>

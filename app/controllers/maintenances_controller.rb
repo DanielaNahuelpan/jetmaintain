@@ -65,6 +65,6 @@ class MaintenancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def maintenance_params
-      params.require(:maintenance).permit(:email, :date_job, :user_id, :motor_id, :city_id, :materials_id, :type_of_maintenance_id)
+      params.require(:maintenance).permit(:email, :date_job, :user_id, :motor_id, :city_id, :material_id, :type_of_maintenance_id)
     end
 end

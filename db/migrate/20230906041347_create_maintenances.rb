@@ -6,7 +6,7 @@ class CreateMaintenances < ActiveRecord::Migration[7.0]
       t.references :user, null: false, foreign_key: true
       t.references :motor, null: false, foreign_key: true
       t.references :city, null: false, foreign_key: true
-      t.references :materials, null: false, foreign_key: true
+      t.references :material_id, null: false, foreign_key: true
       t.references :type_of_maintenance, null: false, foreign_key: true
 
       t.timestamps
