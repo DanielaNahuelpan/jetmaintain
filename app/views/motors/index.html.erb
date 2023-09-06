@@ -1,37 +1,44 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Motores</h1>
-
-<div>
-<table class="table table-dark table-hover">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripción</th>
-      <th>Tipo de equipo</th>
-      <th>Imagen del motor</th>
-    </tr>
-  </thead>
-  <% @motors.each do |motor| %>
-  <tbody>
-    <tr>
-      <td><%= motor.name %></td>
-      <td><%= motor.description %></td>
-      <td><%= motor.type_of_equipment_id %></td>
-      <td><%= link_to motor.image.filename, motor.image if motor.image.attached? %>
-      </td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>  
+<h1 class="text-center">MOTORES</h1>
+<br>
+<div class="container">
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Tipo de equipo</th>
+        <th>Imagen del motor</th>
+        <th>Ver motor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @motors.each do |motor| %>
+        <tr>
+          <td><%= motor.name %></td>
+          <td><%= motor.description %></td>
+          <td><%= motor.type_of_equipment_id %></td>
+          <td><%= link_to motor.image.filename, motor.image if motor.image.attached? %></td>
+          <td>
+            <%= link_to motor do %>
+              <i class="fa-solid fa-eye custom-icon"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <div class="pag-bar mt-3 pt-3">
   <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
 </div>
 
-<%= link_to "New motor", new_motor_path, class: 'btn btn-primary', id: 'btn-custom' %>
-</div>
+<%= link_to 'Ingresa un nuevo motor', new_motor_path, class: 'btn btn-primary', id: 'btn-custom' %>
+<br>
+<br>
+<br>
+
 
 
 

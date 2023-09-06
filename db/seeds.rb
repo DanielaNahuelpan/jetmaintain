@@ -24,28 +24,37 @@
 #TypeOfMaintenance.create(name: "Preventivo")
 #TypeOfMaintenance.create(name: "Correctivo")
 
-# db/seeds.rb
 # Lista de nombres de archivo de imágenes en la carpeta assets/images
 #image_files = Dir.entries(Rails.root.join('app', 'assets', 'images')).select do |f|
 #        f.match?(/\.(jpg|jpeg|png|gif)$/)
 #    end
-    
     # Crea 20 motores con imágenes aleatorias de la carpeta assets/images
 #    20.times do
-    # Selecciona una imagen aleatoria de la lista
+    # Selecciona una imagen aleatoria de la lista assets/images
 #    random_image = image_files.sample
-
-    # Construye la ruta completa de la imagen
+    # Ruta completa de la imagen
 #    image_path = Rails.root.join('app', 'assets', 'images', random_image)
-
-    # Crea un nuevo motor con datos aleatorios
+    # Nuevo motor con datos aleatorios
 #    motor = Motor.create(
 #        name: "Motor #{Faker::Number.unique.number(digits: 3)}",
 #        description: Faker::Lorem.sentence,
-#        type_of_equipment: TypeOfEquipment.find_by(name: "Motor a reacción") # Cambia esto según tu configuración
+#        type_of_equipment: TypeOfEquipment.find_by(name: "Motor a reacción") 
 #        )
-    
-    # Asigna la imagen al motor utilizando Active Storage
-#    motor.image.attach(io: File.open(image_path), filename: random_image)
+
+#    motor.image.attach(io: File.open(image_path), filename: random_image) # Asigna la imagen al motor utilizando Active Storage
 #end
 
+#Creamos 100 mantenimientos a los motores:
+#100.times do
+#    Maintenance.create(
+#        email: Faker::Internet.email,
+#        date_job: Faker::Date.between(from: 2.years.ago, to: Date.today),
+#        user: User.all.sample, # Asigna un usuario existente de manera aleatoria
+#        motor: Motor.all.sample, # Asigna un motor existente de manera aleatoria
+#        city: City.all.sample, # Asigna una ciudad existente de manera aleatoria
+#        material: Material.all.sample, # Asigna un material existente de manera aleatoria
+#        type_of_maintenance: TypeOfMaintenance.all.sample # Asigna un tipo de mantenimiento existente de manera aleatoria
+#        )
+#end
+
+#puts 'Se crearon 100 mantenimientos de motor.'

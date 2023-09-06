@@ -1,10 +1,13 @@
 class MotorsController < ApplicationController
   before_action :set_motor, only: %i[ show edit update destroy ]
 
+  before_action :authenticate_user!
+
   # GET /motors or /motors.json
   def index
     @motors = Motor.all
     @pagy, @motors = pagy(Motor.all)
+    @can_create_motor = current_user.role == 'operador'
   end
 
   # GET /motors/1 or /motors/1.json

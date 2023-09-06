@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
         has_many :maintenances
         has_many :motors, through: :maintenances
+
+        enum role: { operador: 'operador', administrador: 'administrador' }
 end
