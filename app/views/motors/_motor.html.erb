@@ -1,0 +1,22 @@
+<div id="<%= dom_id motor %>">
+  <p>
+    <strong>Name:</strong>
+    <%= motor.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= motor.description %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= link_to motor.image.filename, motor.image if motor.image.attached? %>
+  </p>
+
+  <p>
+    <strong>Type of equipment:</strong>
+    <%= motor.type_of_equipment_id %>
+  </p>
+
+</div>

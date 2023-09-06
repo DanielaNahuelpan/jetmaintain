@@ -1,0 +1,52 @@
+<%= form_with(model: maintenance) do |form| %>
+  <% if maintenance.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(maintenance.errors.count, "error") %> prohibited this maintenance from being saved:</h2>
+
+      <ul>
+        <% maintenance.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :date_job, style: "display: block" %>
+    <%= form.date_field :date_job %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :motor_id, style: "display: block" %>
+    <%= form.text_field :motor_id %>
+  </div>
+
+  <div>
+    <%= form.label :city_id, style: "display: block" %>
+    <%= form.select :city_id, City.all.collect {|c| [c.name, c.id]} %>
+  </div>
+
+  <div>
+    <%= form.label :material_id, style: "display: block" %>
+    <%= form.select :material_id, Material.all.collect {|c| [c.name, c.id]} %>
+  </div>
+
+  <div>
+    <%= form.label :type_of_maintenance_id, style: "display: block" %>
+    <%= form.select :type_of_maintenance_id, TypeOfMaintenance.all.collect {|c| [c.name, c.id]} %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

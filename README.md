@@ -1,24 +1,42 @@
-# README
+PROYECTO JETMAINTAIN
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+JetMaintain es una plataforma de gestión de mantenimiento de motores que ayuda a la empresa a gestionar de manera eficiente todos los mantenimientos preventivos y correctivos de los motores de sus clientes. Esta plataforma está diseñada siguiendo el patrón de arquitectura MVC y es responsive, lo que permite su uso en múltiples dispositivos.
 
-Things you may want to cover:
+Antes de ejecutar el proyecto, asegúrate de tener instalados los siguientes componentes:
 
-* Ruby version
+Ruby (versión 3.2.2)
+Rails (7.0.7.2)
+Base de datos (Postgresql)
 
-* System dependencies
+Intalación de las siguientes gemas:
+bundle add devise
+bundle add Pagy
+bundle add faker
+bundle add figaro
+bundle add activestorage
 
-* Configuration
+Ejecute la creación de base de datos:
+rails db:create
+rails db:migrate
 
-* Database creation
+Ejecute el servidor:
+rails s
 
-* Database initialization
+La aplicación tiene dos roles de usuario:
+Que fueron creados de manera manual para la verificación
+Operador: email: operador@gmail.com contraseña: 123456
+Administrador: email: admin@gmail.com contraseña: 123456
 
-* How to run the test suite
+Estimador operador, en este caso utilicé la gema activestorage para subir imagenes, a través de amazon service S3, favor considerar los datos que se encuentran en las siguientes rutas:
+config/application.yml
+config/storage.yml
 
-* Services (job queues, cache servers, search engines, etc.)
+Si usted quiere agregar datos, están realizados a través del seed:
+db/seed.rb
 
-* Deployment instructions
+Agradezco su tiempo y muchas gracias 
 
-* ...
+Autor: Daniela Nahuelpán
+
+
+
