@@ -4,6 +4,7 @@ class MaintenancesController < ApplicationController
   # GET /maintenances or /maintenances.json
   def index
     @maintenances = Maintenance.all
+    @pagy, @maintenances = pagy(Maintenance.all)
   end
 
   # GET /maintenances/1 or /maintenances/1.json

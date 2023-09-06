@@ -9,7 +9,7 @@
       <th>Nombre</th>
       <th>Descripción</th>
       <th>Tipo de equipo</th>
-      <th>Imagen</th>
+      <th>Imagen del motor</th>
     </tr>
   </thead>
   <% @motors.each do |motor| %>
@@ -18,9 +18,7 @@
       <td><%= motor.name %></td>
       <td><%= motor.description %></td>
       <td><%= motor.type_of_equipment_id %></td>
-      <td><%= link_to motor.image.filename, motor.image if motor.image.attached? do %>
-          <i class="fa-solid fa-phone custom-icon"></i>
-          <% end %>
+      <td><%= link_to motor.image.filename, motor.image if motor.image.attached? %>
       </td>
     </tr>
   </tbody>

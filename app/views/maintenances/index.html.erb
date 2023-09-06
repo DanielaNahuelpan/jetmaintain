@@ -1,14 +1,56 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Maintenances</h1>
+<h1>Mantenimientos de motor</h1>
+
+<div>
+<table class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th>Tipo de motor</th>
+      <th>Tipo de Mantenimiento</th>
+      <th>Nombre del motor</th>
+      <th>Ciudad</th>
+      <th>Materiales utilizados</th>
+      <th>Fecha de realización</th>
+      <th>Email técnico</th>
+      <th>Fecha del mantenimiento</th>
+    </tr>
+  </thead>
+  <% @maintenances.each do |maintenance| %>
+  <tbody>
+    <tr>
+      <td><%= maintenance.motor_id %></td>
+      <td><%= maintenance.type_of_maintenance_id %></td>
+      <td><%= maintenance.motor_id %></td>
+      <td><%= maintenance.city_id %></td>
+      <td><%= maintenance.material_id %></td>
+      <td><%= maintenance.created_at %></td>
+      <td><%= maintenance.email %></td>
+      <td><%= maintenance.date_job %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>  
+</div>
+
+<div class="pag-bar mt-3 pt-3">
+  <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+</div>
+
+<%= link_to "New maintenance", new_maintenance_path, class: 'btn btn-primary', id: 'btn-custom' %>
+<br>
+<br>
 
 <div id="maintenances">
   <% @maintenances.each do |maintenance| %>
     <%= render maintenance %>
     <p>
-      <%= link_to "Show this maintenance", maintenance %>
+      <%= link_to "Show this maintenance" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New maintenance", new_maintenance_path %>
+
+
+
+
