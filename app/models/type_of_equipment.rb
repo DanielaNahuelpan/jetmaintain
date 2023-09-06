@@ -1,0 +1,2 @@
+class TypeOfEquipment < ApplicationRecord
+end
